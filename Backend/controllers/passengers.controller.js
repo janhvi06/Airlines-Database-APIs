@@ -174,7 +174,7 @@ const readPassengerData = (req,res) => {
             select: "id airlineName country logo slogan head_quaters website established"
         })
     .skip(size * page)
-    .limit(size) //only working when hardcoded
+    .limit(1) //working only when hardcoded, as in <limit(size) is not wokring which should in a proper manner
     .exec(function (err, events) {
         passengerModel.count().exec((err, count) => {
                 if(count){
